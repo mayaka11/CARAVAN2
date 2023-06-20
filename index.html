@@ -10,11 +10,25 @@
 
   <body>
     <!--ヘッダー-->
-    <div class="header">
-      <div class="header-top"></div>
+    <header>
+      <h1 class="heading"> <!--heading = 見出し -->
+        <a href="index.html"> <!-- a要素には文字をクリックしたときにindex.htmlへジャンプするようにhref属性とURLを記述する -->
+          CARAVAN2
+        </a>
+      </h1>
+    </header>
 
-      <div class="header-bottom"></div>
-    </div>
+    <!-- ナビゲーション -->
+    <nav> <!-- nav要素は、ナビゲーションメニューを設定するときに使用するheader要素やfooter要素などと同様に領域を作成するための要素 -->
+      <ul class="nav-list"><!-- ul要素はUnordered Listの略で順序のないリスト（箇条書きリスト）を表示する要素。リストの各項目はli要素で記述 -->
+        <li class="nav-list-item"> <!-- li要素はList Itemの略でリストの内容を指定する要素 -->
+          <a href="index.html">Home</a>
+        </li>
+        <li class="nav-list-item">About</li>
+        <li class="nav-list-item">Topic</li>
+      </ul>
+    </nav>
+
     <!--メインビジュアル-->
     <div class="main-visual">
       <div class="main-visual-content"></div>
@@ -33,10 +47,9 @@
 
 
     <!--フッター-->
-    <div class="footer"></div>
-
-
-
+    <footer>
+      <p class="footer-text">© All rights reserved by Infratop.Inc.</p>
+    </footer>
 
   </body>
 </html>

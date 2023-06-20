@@ -1,33 +1,45 @@
+/*================================================
+全体に反映される
+=================================================*/
+
 /*ブラウザがそれぞれ持っているcssをリセットするための記述*/
 ＊ {
   margin: 0;
   padding: 0;
   box-sizing: border-box; /*要素の横幅や高さが意図したとおりに動くようにしている*/
+  color: #6c6b6b; /*すべての要素の文字色をそろえる*/
 }
 
+a {
+  text-decoration: none; /*リンクに下線が惹かれないように指定をなしにする*/
+}
 
 /*=============================
 ヘッダー
 ==============================*/
 
-.header {
-  width: 100%; /*横幅*/
-  height: 120px; /*高さ*/
-  background-color: red; /*背景色*/
+header {
+  width: 90%; /*横幅*/
+  padding: 15px 0; /*内側に余白（上下、左右）*/
+  margin: 0 auto; /*外側に余白（上下、左右）*/
+  text-align: center; /*テキストや画像の行そろえ*/
 }
 
-.header-top {
-  width: 100%;
-  height: 70px;
-  background-color: hotpink;
+header .heading { /*headerタグ内のheadingクラスのみに反映*/
+  font-size: 32px;
 }
 
-.header-bottom {
-  width: 100%;
-  height: 50px;
-  background-color: pink;
+.nav-list {
+  text-align: center; /*テキストや画像の行そろえを設定*/
+  padding: 10px 0; /*内側に余白*/
+  margin: 0 auto; /*外側に余白*/
 }
 
+.nav-list-item {
+  list-style: none; /*箇条書きリスト行頭のスタイルの制御（noneは先頭マークなし）*/
+  display: inline-block; /*要素の表示形式を設定（inline-blickは指定したHTMLのタフをインラインブロック要素に変更する値）*/
+  margin: 0 20px; /*外側に余白*/
+}
 
 /*==============================
 メインビジュアル
@@ -80,8 +92,14 @@
 フッター
 =====================================*/
 
-.footer {
+footer {
   width: 100%; /*横幅*/
   height: 120px; /*高さ*/
-  background-color: blue; /*背景色*/
+  text-align: center;
+  line-height: 120px;
+  background-color: #848282;
+}
+
+.footer-text {
+  color: #fff;
 }
