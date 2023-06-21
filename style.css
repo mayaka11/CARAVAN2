@@ -48,17 +48,28 @@ header .heading { /*headerタグ内のheadingクラスのみに反映*/
 .main-visual {
   width: 100%; /*横幅*/
   height: 300px; /*高さ*/
-  background-color: orange; /*背景色*/
+  background-image: url(img/mv.jpg); /*背景*/
+  background-size: cover; /*画像の縦横比を維持したまま、領域全体を覆うサイズで伸縮される（画像の表示されない部分も発生）*/
+  background-position: center; /*背景画像の位置の調整（今回は中央に配置）*/
 }
 
 .main-visual-content {
-  width: 350px;
+  width: 40%; /*画面幅が変わってもバランスが保てるように％へ数値を変更する*/
   height: 300px;
-  background-color: gold;
+  background-color: rgba(0,0,0,0.5); /*背景色を半透明の黒にする*/
+  text-align: center; /* 文字を中央揃えにする */
+
 }
 
+.main-visual-text {
+  color: #fff; /*文字色*/
+  padding-top: 105px; /* 上側の内側余白で垂直方向の位置を調整 */
+}
 
-
+.main-visual-name {
+  margin-top: 30px; /*上側の外側の余白*/
+  color: #fff; /*文字色*/
+}
 
 
 /*===============================
@@ -77,13 +88,13 @@ header .heading { /*headerタグ内のheadingクラスのみに反映*/
 .blog {
   width: 600px;
   height: 1400px; /*Flexboxの利用の時は高さを親要素の数値に統一する*/
-  background: limegreen;
+  /*background: limegreen; 背景色はFlexboxの利用の時は削除する*/
 }
 
 .sidebar {
   width: 240px;
   height: 1400px;  /*Flexboxの利用の利用の時は高さを親要素の数値に統一する*/
-  background: palegreen;
+  /*background: palegreen; 背景色はFlexboxの利用の時は削除する*/
 }
 
 
