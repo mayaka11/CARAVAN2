@@ -77,23 +77,70 @@ header .heading { /*headerタグ内のheadingクラスのみに反映*/
 ================================*/
 
 .main {
-  width: 840px; /*横幅*/
+  width: 800px; /*横幅*/
   /*height: 1400px; 高さはFlexboxの利用の時は削除する*/
   /*background-color: green; 背景色はFlexboxの利用の時は削除する*/
   display: flex; /*Flexboxの利用*/
   justify-content: center; /*子要素の横並び・中央寄せ*/
   margin: 0 auto; /*中央寄せ（左右に余白がないとできない）*/
+  padding: 70px 0; /*上下に70px、左右に0pxの内側余白*/
 }
 
 .blog {
-  width: 600px;
-  height: 1400px; /*Flexboxの利用の時は高さを親要素の数値に統一する*/
+  width: 540px;
+  /*height: 1400px; /*Flexboxの利用の時は高さを親要素の数値に統一する*/
   /*background: limegreen; 背景色はFlexboxの利用の時は削除する*/
+  margin-right: 30px; /*領域の右側に余白*/
 }
 
+.blog-heading {
+  border-bottom: 8px solid #f7f7f7; /*下側のボーダーに関する設定を一括して指定するためのプロパティ*/
+  text-align: center; /*文字を中央揃えにする*/
+  line-height: 0.6; /*行の高さを設定する*/
+}
+
+.blog-box {
+  padding-top: 50px; /*上側の内側に余白*/
+}
+
+.blog-item {
+  padding-bottom:20px; /*下側の内側に余白*/
+  margin-bottom: 20px; /*下側の外側に余白*/
+  border-bottom: 1px solid #f7f7f7;  /*下側のボーダーに関する設定を一括して指定するためのプロパティ*/
+  display: flex; /*Flexboxの利用*/
+  justify-content: flex-start;
+}
+
+.blog-image {
+  height: 180px; /*高さ*/
+}
+
+.blog-text {
+  padding: 25px 0 0 30px; /*上下に20px 0、左右に0 30pxの内側に余白*/
+}
+
+.blog-text-heading {
+  padding-bottom: 15px; /*下側に15pxの内側に余白*/
+}
+
+.blog-date {
+  font-size : 12px;
+  display: inline-block; /*要素の表示形式を設定（inline-blickは指定したHTMLのタフをインラインブロック要素に変更する値）*/
+}
+
+.category {
+  display: inline-block;  /*要素の表示形式を設定（inline-blickは指定したHTMLのタフをインラインブロック要素に変更する値）*/
+  padding: 5px 8px; /*上下に5px、左右に8pxの内側余白*/
+  background-color: #acabab;
+  border-radius: 3px; /*領域の四辺の角を丸くしたいときに使うプロパティ*/
+  color: #fff;
+  font-size: 11px;
+}
+
+
 .sidebar {
-  width: 240px;
-  height: 1400px;  /*Flexboxの利用の利用の時は高さを親要素の数値に統一する*/
+  width: 230px;
+  /*height: 1400px;  /*Flexboxの利用の利用の時は高さを親要素の数値に統一する*/
   /*background: palegreen; 背景色はFlexboxの利用の時は削除する*/
 }
 
