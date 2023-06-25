@@ -14,6 +14,10 @@ a {
   text-decoration: none; /*リンクに下線が惹かれないように指定をなしにする*/
 }
 
+header, nav, h2, .main-visual, footer {
+  font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
 /*=============================
 ヘッダー
 ==============================*/
@@ -23,6 +27,17 @@ header {
   padding: 15px 0; /*内側に余白（上下、左右）*/
   margin: 0 auto; /*外側に余白（上下、左右）*/
   text-align: center; /*テキストや画像の行そろえ*/
+  position: relative; /*socialの機銃位置を相対位置へ変更する*/
+}
+.social {
+  position: absolute; /*ヘッダーの左上を基準に絶対一で指定する*/
+  top: 22px; /*ヘッダーの左上から22px下側へ移動する*/
+  right: 22px; /*ヘッダーの右上から22px左側へ移動する*/
+}
+
+.social i {
+  display: inline-block;
+  margin-left: 20px;
 }
 
 header .heading { /*headerタグ内のheadingクラスのみに反映*/
@@ -40,6 +55,7 @@ header .heading { /*headerタグ内のheadingクラスのみに反映*/
   display: inline-block; /*要素の表示形式を設定（inline-blickは指定したHTMLのタフをインラインブロック要素に変更する値）*/
   margin: 0 20px; /*外側に余白*/
 }
+
 
 /*==============================
 メインビジュアル
@@ -76,7 +92,7 @@ header .heading { /*headerタグ内のheadingクラスのみに反映*/
 メイン
 ================================*/
 
-.main {
+main {
   width: 800px; /*横幅*/
   /*height: 1400px; 高さはFlexboxの利用の時は削除する*/
   /*background-color: green; 背景色はFlexboxの利用の時は削除する*/
@@ -137,11 +153,98 @@ header .heading { /*headerタグ内のheadingクラスのみに反映*/
   font-size: 11px;
 }
 
+/*==================================
+pagination
+====================================*/
+
+.pagination {
+  text-align: center; /*文字の中央ぞろえ*/
+  padding-top: 50px; /*上部に50px内側に余白*/
+}
+
+.pagination p {
+  display: inline-block; /*指定したHTMLのタグをインラインブロック要素へ変更する値(横幅や高さ余白を指定できる)*/
+  width: 30px; /*横幅*/
+  height: 30px; /*高さ*/
+  margin: 0 5px; /*上下0px、左右5pxの外側余白*/
+  color: #fff;
+  background-color: #acabab;
+  border-radius: 3px; /*領域の四辺の角を丸くしたいときに使うプロパティ*/
+  line-height: 30px; /*文字の行間の調節*/
+}
+
+/*===================================
+  サイドバー
+====================================*/
 
 .sidebar {
-  width: 230px;
+  width: 230px; /*横幅*/
   /*height: 1400px;  /*Flexboxの利用の利用の時は高さを親要素の数値に統一する*/
   /*background: palegreen; 背景色はFlexboxの利用の時は削除する*/
+}
+
+.common-heading {
+  border-bottom: 8px solid #f7f7f7; /*ボーダーラインの一括設定*/
+            /* 線の大きさ　線の種類　線の色を表している(solidは１本線を表している)*/
+  text-align: center; /*文章の位置の設定*/
+  line-height: 0.6; /*ボーダーラインの高さ設定*/
+}
+
+.sidebar-contents {
+  padding: 50px 0;  /*上下に50px、左右に0px内側に余白*/
+}
+
+.popular-text, .categories-text {
+  padding-bottom: 5px; /*下に5px内側余白*/
+  border-bottom: 1px solid #f7f7f7; /*ボーダーラインの一括設定*/
+  margin-bottom: 5px; /*下に5px外側余白*/
+}
+
+.popular-text:last-child, .categories-text:last-child { /*疑似クラス（今回はpopular-textとcategories-textの中で、最後に記述された要素のみに適応するという意味)*/
+  margin: 0; /*外側余白なし*/
+  padding: 0; /*内側余白なし*/
+  border: none; /*線の種類の設定（noneはなしを意味する）*/
+}
+
+.instagram .sidebar-contents {
+  display: flex; /*Flexboxを利用*/
+  flex-wrap: wrap; /*flexアイテムが複数行に分割して表示される*/
+}
+
+.instagram-box {
+  width: 110px; /*横幅*/
+  padding-top: 110px; /*上部の110px内側余白*/
+  background-size: cover; /*要素の横幅・高さに合わせて背景画像を引き延ばしたり、切り取ったりする指定*/
+  background-position: center; /*背景画像の表示位置設定*/
+  margin-bottom: 10px; /*下側に10px外側余白*/
+}
+
+.instagram-box:nth-child(odd) {
+  margin: 0 10px 10px 0; /*外側余白*/
+}
+
+.instagram-box:nth-child(1) {
+  background-image: url(img/airport.jpg);
+}
+
+.instagram-box:nth-child(2) {
+  background-image: url(img/japan.jpg);
+}
+
+.instagram-box:nth-child(3) {
+  background-image: url(img/snow.jpg);
+}
+
+.instagram-box:nth-child(4) {
+  background-image: url(img/japan2.jpg);
+}
+
+.instagram-box:nth-child(5) {
+  background-image: url(img/lake.jpg);
+}
+
+.instagram-box:nth-child(6) {
+  background-image: url(img/road.jpg);
 }
 
 
@@ -161,3 +264,34 @@ footer {
 .footer-text {
   color: #fff;
 }
+
+
+/*=======================================
+レスポンシブ設定（パソコンでもスマホでもサイズが変わっても違和感なくサイトを見れるようにする設定）
+===========================================*/
+
+/*すべての画面サイズで適応される設定*/
+  .social i {
+    color: black;
+  }
+
+/*タブレット横置きサイズ(1024px)以下の際に適応される設定*/
+  @media screen and (max-width:1024px) {
+    .social i {
+      color: green;
+    }
+  }
+
+/*タブレット横置きサイズ(768px)以下の際に適応される設定*/
+  @media screen and (max-width:768px) {
+    .social i {
+      color: red;
+    }
+  }
+
+/*スマートフォンサイズ(425px)以下の際に適応される設定*/
+  @media screen and (max-width:425px) {
+    .social i {
+      color: blue;
+    }
+  }
